@@ -3,14 +3,6 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#000000</color>
-    <color name="colorLoginBackground">#FFFFFF</color>
-    <color name="colorLoginButtonBackground">#000000</color>
-    <color name="colorLoginButtonText">#FFFFFF</color>
-    <color name="colorTextPrimary">#000000</color>
-    <color name="colorBottomNavBarNotSelected">#616161</color>
-    <color name="colorBottomNavBarSelected">#000000</color>
-
-
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 </resources>
