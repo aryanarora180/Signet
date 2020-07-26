@@ -12,5 +12,6 @@
     <string name="error_invalid_url">Invalid URL</string>
     <string name="saved_links">Saved links</string>
     <string name="no_articles_prompt">You haven\'t saved any links. Share any link with Signet and they\'ll be waiting for you right here.</string>
+    <string name="a_new_browsing_experience">a new browsing experience</string>
 
 </resources>
