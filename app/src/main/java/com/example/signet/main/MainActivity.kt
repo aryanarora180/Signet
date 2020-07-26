@@ -2,6 +2,7 @@ package com.example.signet.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel.getSavedLinks().observe(this, Observer { links ->
+            Log.d("Link","links:${links}")
             if(links.isNullOrEmpty()) {
                 saved_links_recycler.visibility = View.GONE
                 no_links_empty.visibility = View.VISIBLE
