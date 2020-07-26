@@ -15,4 +15,10 @@
     <string name="no_articles_prompt">You haven\'t saved any links. Share any link with Signet and they\'ll be waiting for you right here.</string>
     <string name="a_new_browsing_experience">a new browsing experience</string>
 
+    <string name="sign_out_title">Sign out</string>
+    <string name="sign_out_body">Are you sure you want to sign out?</string>
+    <string name="sign_out_positive">YES</string>
+    <string name="sign_out_negative">CANCEL</string>
+
+
 </resources>
