@@ -7,11 +7,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.signet.R
-import com.example.signet.helper.Link
 import com.example.signet.login.LoginActivity
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_receive_link.*
 import java.util.*
@@ -32,8 +29,12 @@ class ReceiveLinkActivity : AppCompatActivity() {
                 if (url != null) {
                     if (url.isNotEmpty())
                         link_url_text.text = url
-                    else
+                    else {
+                        setNotLoading()
+                        link_details_card.visibility = View.GONE
+                        save_link_fab.visibility = View.GONE
                         showSnackbar(R.string.error_invalid_url)
+                    }
                 }
             })
 
@@ -45,9 +46,10 @@ class ReceiveLinkActivity : AppCompatActivity() {
                     link_title_text.text = metadata.meta.title
 
                     save_link_fab.setOnClickListener {
+                        setLoading()
                         viewModel.saveUserLink(metadata).observe(this, Observer { saved ->
-                            if(saved != null) {
-                                if(saved)
+                            if (saved != null) {
+                                if (saved)
                                     finish()
                                 else
                                     showSnackbar(R.string.error_saving_link)
@@ -63,6 +65,13 @@ class ReceiveLinkActivity : AppCompatActivity() {
         }
     }
 
+    private fun setLoading() {
+        link_loading_progress.visibility = View.VISIBLE
+        link_details_card.visibility = View.GONE
+        save_link_fab.visibility = View.GONE
+        save_link_fab.hide()
+    }
+
     private fun setNotLoading() {
         link_loading_progress.visibility = View.GONE
         link_details_card.visibility = View.VISIBLE
@@ -71,6 +80,6 @@ class ReceiveLinkActivity : AppCompatActivity() {
     }
 
     private fun showSnackbar(stringId: Int) =
-        Snackbar.make(receive_link_coordinator, stringId, Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(receive_link_coordinator, stringId, Snackbar.LENGTH_INDEFINITE).show()
 
 }

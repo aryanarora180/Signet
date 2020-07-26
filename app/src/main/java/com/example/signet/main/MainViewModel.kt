@@ -15,7 +15,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = LinksRepository()
 
-    private val _savedLinks: MutableLiveData<List<Link>> = MutableLiveData(listOf())
+    private val _savedLinks: MutableLiveData<List<Link>> = MutableLiveData()
     fun getSavedLinks(): LiveData<List<Link>> {
         repository.getUserLinksReference()?.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
