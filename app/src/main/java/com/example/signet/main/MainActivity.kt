@@ -19,12 +19,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        saved_links_recycler.adapter = adapter
+
         viewModel.getSavedLinks().observe(this, Observer { links ->
-            Log.d("Link","links:${links}")
             if(links.isNullOrEmpty()) {
                 saved_links_recycler.visibility = View.GONE
                 no_links_empty.visibility = View.VISIBLE
             } else {
+                saved_links_recycler.visibility = View.VISIBLE
+                no_links_empty.visibility = View.GONE
                 adapter.data = links
             }
         })
