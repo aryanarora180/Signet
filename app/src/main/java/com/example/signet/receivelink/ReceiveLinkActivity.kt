@@ -44,13 +44,15 @@ class ReceiveLinkActivity : AppCompatActivity() {
                     Picasso.get().load(metadata.meta.image).into(link_featured_image)
                     link_title_text.text = metadata.meta.title
 
-                    val time = Date().time
-                    val uid = FirebaseAuth.getInstance().uid ?: ""
-
                     save_link_fab.setOnClickListener {
-                        val ref = FirebaseDatabase.getInstance().reference.child("links").child(uid).child(time.toString())
-                        val link = Link("google.com", metadata.meta.image, metadata.meta.site.favicon, metadata.meta.title, time, metadata.meta.site.name)
-                        ref.setValue(link)
+                        viewModel.saveUserLink(metadata).observe(this, Observer { saved ->
+                            if(saved != null) {
+                                if(saved)
+                                    finish()
+                                else
+                                    showSnackbar(R.string.error_saving_link)
+                            }
+                        })
                     }
                 }
             })
