@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Signet</string>
+
+    <string name="rtd_field_days" translatable="false">days</string>
+    <string name="rtd_field_days_default_value" translatable="false">6</string>
+    <string name="rtd_field_email" translatable="false">email</string>
+
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_failed">Sign in failed.</string>
 </resources>

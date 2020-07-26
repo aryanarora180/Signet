@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "40056027635",
+    "firebase_url": "https://signet-a5ebb.firebaseio.com",
+    "project_id": "signet-a5ebb",
+    "storage_bucket": "signet-a5ebb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40056027635:android:51f29ec39e512fea33ba86",
+        "android_client_info": {
+          "package_name": "com.example.signet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40056027635-ik4cklh2hf86fikgh756d7p5jtfroojm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.signet",
+            "certificate_hash": "0206bba2104801ab5d241570d11abfc298bd4855"
+          }
+        },
+        {
+          "client_id": "40056027635-kj0a59vseksq1q4sse48ao3jo9cgca9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAVZPMyqGV0N0mxL3Q_G8l_Ee0u6AraU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40056027635-kj0a59vseksq1q4sse48ao3jo9cgca9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
