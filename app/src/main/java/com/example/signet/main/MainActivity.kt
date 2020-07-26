@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Picasso.get().load(GoogleSignIn.getLastSignedInAccount(this)?.photoUrl).into(profile_image)
-        profile_image.setOnLongClickListener {
+        Picasso.get().load(GoogleSignIn.getLastSignedInAccount(this)?.photoUrl).into(circular_profile_image)
+        circular_profile_image.setOnLongClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle(resources.getString(R.string.sign_out_title))
                 .setMessage(resources.getString(R.string.sign_out_body))
