@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Signet</string>
+    <string name="save_article_confirmation">Save this article to your current session?</string>
+
+    <string name="error_invalid_url">Invalid URL</string>
+
 </resources>
