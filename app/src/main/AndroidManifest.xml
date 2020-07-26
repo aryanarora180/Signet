@@ -17,7 +17,7 @@
                 <data android:mimeType="text/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".login.LoginActivity"/>
         <activity android:name=".SplashActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />

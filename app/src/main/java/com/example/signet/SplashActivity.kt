@@ -2,6 +2,7 @@ package com.example.signet
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import com.example.signet.login.LoginActivity
 import com.example.signet.main.MainActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase

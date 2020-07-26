@@ -6,8 +6,8 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.example.signet.LoginActivity
 import com.example.signet.R
+import com.example.signet.login.LoginActivity
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_receive_link.*
@@ -26,8 +26,8 @@ class ReceiveLinkActivity : AppCompatActivity() {
             viewModel.getArticleDetails(intentText ?: "")
 
             viewModel.url.observe(this, Observer { url ->
-                if(url != null) {
-                    if(url.isNotEmpty())
+                if (url != null) {
+                    if (url.isNotEmpty())
                         link_url_text.text = url
                     else
                         showSnackbar(R.string.error_invalid_url)
@@ -60,6 +60,7 @@ class ReceiveLinkActivity : AppCompatActivity() {
         save_link_fab.show()
     }
 
-    private fun showSnackbar(stringId: Int) = Snackbar.make(receive_link_coordinator, stringId, Snackbar.LENGTH_SHORT).show()
+    private fun showSnackbar(stringId: Int) =
+        Snackbar.make(receive_link_coordinator, stringId, Snackbar.LENGTH_SHORT).show()
 
 }
