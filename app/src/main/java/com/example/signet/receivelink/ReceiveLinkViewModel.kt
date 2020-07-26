@@ -1,22 +1,20 @@
-package com.example.signet.receivearticle
+package com.example.signet.receivelink
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.signet.network.Api
-import com.example.signet.network.ArticleMetaData
+import com.example.signet.network.LinkMetaData
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
-import retrofit2.await
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.regex.Pattern
 
-class ReceiveArticleViewModel(application: Application) : AndroidViewModel(application) {
+class ReceiveLinkViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _currentUser = Firebase.auth.currentUser
     val isUserSignedIn = _currentUser != null
@@ -25,8 +23,8 @@ class ReceiveArticleViewModel(application: Application) : AndroidViewModel(appli
     val url: LiveData<String>
         get() = _url
 
-    private val _metadata: MutableLiveData<ArticleMetaData> = MutableLiveData()
-    val metadata: LiveData<ArticleMetaData>
+    private val _metadata: MutableLiveData<LinkMetaData> = MutableLiveData()
+    val metadata: LiveData<LinkMetaData>
         get() = _metadata
 
     fun getArticleDetails(intentText: String) {

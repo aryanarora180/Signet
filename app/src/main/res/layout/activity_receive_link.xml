@@ -2,10 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".receivearticle.ReceiveArticleActivity">
+    tools:context=".receivelink.ReceiveLinkActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/receive_article_coordinator"
+        android:id="@+id/receive_link_coordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -14,7 +14,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/save_article_header"
+                android:id="@+id/save_link_header"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -27,17 +27,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/article_url_text"
+                android:id="@+id/link_url_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/save_article_header" />
+                app:layout_constraintTop_toBottomOf="@+id/save_link_header" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/save_article_fab"
+                android:id="@+id/save_link_fab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
@@ -49,7 +49,7 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/article_details_card"
+                android:id="@+id/link_details_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
@@ -59,7 +59,7 @@
                 app:cardCornerRadius="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/article_url_text">
+                app:layout_constraintTop_toBottomOf="@+id/link_url_text">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -67,7 +67,7 @@
 
 
                     <ImageView
-                        android:id="@+id/article_featured_image"
+                        android:id="@+id/link_featured_image"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -77,10 +77,10 @@
                         android:scaleType="centerCrop"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/article_date_text" />
+                        app:layout_constraintTop_toBottomOf="@+id/link_date_text" />
 
                     <TextView
-                        android:id="@+id/article_date_text"
+                        android:id="@+id/link_date_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -91,7 +91,7 @@
                         tools:text="March 23rd, 2020" />
 
                     <TextView
-                        android:id="@+id/article_title_text"
+                        android:id="@+id/link_title_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -101,21 +101,20 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/article_featured_image"
+                        app:layout_constraintTop_toBottomOf="@+id/link_featured_image"
                         tools:text="Corona virus symptoms: what are they and what do they mean?" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <ProgressBar
-                android:id="@+id/article_loading_progress"
-                style="?android:attr/progressBarStyle"
+                android:id="@+id/link_loading_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/article_url_text" />
+                app:layout_constraintTop_toBottomOf="@+id/link_url_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

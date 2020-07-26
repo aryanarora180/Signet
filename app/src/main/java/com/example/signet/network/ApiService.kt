@@ -1,6 +1,5 @@
 package com.example.signet.network
 
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -17,7 +16,7 @@ interface ApiService {
 
     @Headers("Authorization: Y2FyZS5uZXRzaXBzQGdtYWlsLmNvbTpZVEdwM0VsT2RDOVdpSkpMOEt5Yg==")
     @GET("/")
-    suspend fun getMetaData(@Query("url") url: String): ArticleMetaData
+    suspend fun getMetaData(@Query("url") url: String): LinkMetaData
 
 }
 

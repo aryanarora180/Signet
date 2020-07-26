@@ -2,7 +2,7 @@ package com.example.signet.network
 
 import com.google.gson.annotations.SerializedName
 
-data class ArticleMetaData (
+data class LinkMetaData (
     @SerializedName("result") val result: Result = Result(),
     @SerializedName("meta") val meta: Meta = Meta()
 )
