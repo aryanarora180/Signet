@@ -1,5 +1,7 @@
 package com.example.signet.main
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,14 +14,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val adapter = LinkAdapter()
     private val viewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        saved_links_recycler.adapter = adapter
 
         viewModel.getSavedLinks().observe(this, Observer { links ->
             if(links.isNullOrEmpty()) {
@@ -28,7 +27,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 saved_links_recycler.visibility = View.VISIBLE
                 no_links_empty.visibility = View.GONE
-                adapter.data = links
+                saved_links_recycler.adapter = LinkAdapter(links) { url ->
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(browserIntent)
+                }
             }
         })
     }

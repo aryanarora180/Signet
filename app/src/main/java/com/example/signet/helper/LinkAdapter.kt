@@ -7,18 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.signet.R
+import com.google.android.material.card.MaterialCardView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item_link.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class LinkAdapter : RecyclerView.Adapter<LinkAdapter.ViewHolder>() {
-
-    var data: List<Link> = listOf()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
+class LinkAdapter(private val data: List<Link>, private val listener: (String) -> Unit) : RecyclerView.Adapter<LinkAdapter.ViewHolder>() {
 
     private val dateFormatter = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault())
 
@@ -26,6 +21,7 @@ class LinkAdapter : RecyclerView.Adapter<LinkAdapter.ViewHolder>() {
         val dataSavedText: TextView = view.link_date_text
         val linkTitleText: TextView = view.link_title_text
         val featuredImage: ImageView = view.link_featured_image
+        val linkCard: MaterialCardView = view.link_card
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
@@ -46,6 +42,10 @@ class LinkAdapter : RecyclerView.Adapter<LinkAdapter.ViewHolder>() {
 
         holder.linkTitleText.text = link.title
         holder.dataSavedText.text = dateFormatter.format(link.dateAdded)
+
+        holder.linkCard.setOnClickListener {
+            listener(link.linkUrl)
+        }
     }
 
 }
