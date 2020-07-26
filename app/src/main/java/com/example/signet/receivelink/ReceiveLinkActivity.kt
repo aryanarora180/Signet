@@ -7,8 +7,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.signet.R
+import com.example.signet.helper.Link
 import com.example.signet.login.LoginActivity
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_receive_link.*
 import java.util.*
@@ -41,8 +44,13 @@ class ReceiveLinkActivity : AppCompatActivity() {
                     Picasso.get().load(metadata.meta.image).into(link_featured_image)
                     link_title_text.text = metadata.meta.title
 
+                    val time = Date().time
+                    val uid = FirebaseAuth.getInstance().uid ?: ""
+
                     save_link_fab.setOnClickListener {
-                        // Save article to realtime database
+                        val ref = FirebaseDatabase.getInstance().reference.child("links").child(uid).child(time.toString())
+                        val link = Link("google.com",metadata.meta.image,metadata.meta.title,time)
+                        ref.setValue(link)
                     }
                 }
             })

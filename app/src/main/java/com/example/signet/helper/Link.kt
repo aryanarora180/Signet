@@ -6,5 +6,5 @@ data class Link(
     val linkUrl: String,
     val featuredImageUrl: String,
     val title: String,
-    val dateAdded: Date
+    val dateAdded: Long
 )

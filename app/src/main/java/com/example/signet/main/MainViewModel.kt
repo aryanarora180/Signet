@@ -13,6 +13,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _savedLinks: MutableLiveData<List<Link>> = MutableLiveData(listOf())
     fun getSavedLinks(): LiveData<List<Link>> {
+
+
         return _savedLinks
     }
 
