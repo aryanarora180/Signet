@@ -49,7 +49,7 @@ class ReceiveLinkActivity : AppCompatActivity() {
 
                     save_link_fab.setOnClickListener {
                         val ref = FirebaseDatabase.getInstance().reference.child("links").child(uid).child(time.toString())
-                        val link = Link("google.com",metadata.meta.image,metadata.meta.title,time)
+                        val link = Link("google.com", metadata.meta.image, metadata.meta.site.favicon, metadata.meta.title, time, metadata.meta.site.name)
                         ref.setValue(link)
                     }
                 }
