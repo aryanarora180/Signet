@@ -1,6 +1,7 @@
 package com.example.signet.receivearticle
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -46,9 +47,10 @@ class ReceiveArticleViewModel(application: Application) : AndroidViewModel(appli
     private fun getArticleMetadata(url: String) {
         viewModelScope.launch {
             try {
-                val response = Api.retrofitService.getMetaData(url).await()
+                val response = Api.retrofitService.getMetaData(url)
                 _metadata.postValue(response)
             } catch (e: Exception) {
+                e.printStackTrace()
                 _metadata.postValue(null)
             }
         }
