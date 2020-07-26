@@ -10,5 +10,6 @@
     <string name="save_article_confirmation">Save this article to your current session?</string>
 
     <string name="error_invalid_url">Invalid URL</string>
+    <string name="a_new_browsing_experience">a new browsing experience</string>
 
 </resources>
