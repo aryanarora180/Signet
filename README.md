@@ -15,10 +15,10 @@ Making Google sign in and RealtTimeDatabase use MVVM architecure was something w
 The app is 100% complete.
 
 ## App screenshots
-![Screenshot1](/Screenshot1.jpg)
-![Screenshot2](/Screenshot2.jpg)
-![Screenshot3](/Screenshot3.jpg)
-![Screenshot4](/Screenshot4.jpg)
+https://github.com/aryanarora180/Signet/blob/master/Screenshot1.jpg
+https://github.com/aryanarora180/Signet/blob/master/Screenshot2.jpg
+https://github.com/aryanarora180/Signet/blob/master/Screenshot3.jpg
+https://github.com/aryanarora180/Signet/blob/master/Screenshot4.jpg
 
 ## App APK file
-Coming soon
+https://drive.google.com/file/d/1e-EnbqPCsSSuLhEHjRQd7Rt3XAgDriJ6/view?usp=sharing
